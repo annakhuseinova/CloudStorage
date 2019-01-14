@@ -1,0 +1,43 @@
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.GridPane?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.image.ImageView?>
+
+<VBox fx:controller="OpeningPanelController" stylesheets="styles.css"
+      xmlns:fx="http://javafx.com/fxml" fx:id="SceneBackground">
+    <AnchorPane fx:id="anchorPane" >
+        <Label fx:id="label" layoutX="60" layoutY="400">Cloud Storage</Label>
+        <Label fx:id="description" layoutX="80" layoutY="455" opacity="0.5">... store all of your stuff at one place.</Label>
+        <Label fx:id="messageToUser" layoutX="587.5" layoutY="70" style="-fx-text-fill:black; -fx-font-size: 15; -fx-font-weight: bold"></Label>
+        <VBox layoutX="530" layoutY="100" spacing="6" alignment="CENTER">
+            <TextField promptText="Enter your login..." prefWidth="230" layoutY="50" prefHeight="30" fx:id="loginField"></TextField>
+            <PasswordField promptText="Enter password..." prefWidth="230" prefHeight="30"  fx:id="passwordField"></PasswordField>
+        </VBox>
+        <Button fx:id="entryButton"  prefWidth="130" layoutY="190" layoutX="583" onAction="#sendAuthMessage">Enter</Button>
+        <Label id="registrationNotification" layoutX="565" layoutY="240" prefWidth="200">New to Cloud Storage? </Label>
+        <Button fx:id="registrationButton" layoutX="583" layoutY="280" prefWidth="130" onAction="#showRegistrationForms">Register</Button>
+        <Label visible="false" fx:id="registrationSuccessNotification" textFill="white" opacity="0.7" text="You've successfully registered!" layoutX="543" layoutY="330" style="-fx-font-size: 16; -fx-font-weight: bold;"></Label>
+        <Button fx:id="cancelRegistrationButton" layoutX="583" layoutY="280" prefWidth="130" onAction="#cancelRegistration"  visible="false">
+            Cancel registration</Button>
+        <VBox visible="false" fx:id="registrationBlock" layoutY="340" layoutX="530" spacing="8" alignment="CENTER">
+            <Label fx:id="registrationMessage"  layoutY="300" layoutX="620" textFill="black" style="-fx-font-size: 14;-fx-font-weight: bold;"></Label>
+            <TextField promptText="Enter your login..." fx:id="registrationLoginForm" prefHeight="30" prefWidth="230"></TextField>
+            <PasswordField promptText="Enter your new password..." fx:id="registrationPassForm" prefHeight="30" prefWidth="230"></PasswordField>
+            <PasswordField promptText="Enter your new password again..." fx:id="repeatPassForm" prefHeight="30" prefWidth="230"></PasswordField>
+            <Button layoutY="460" layoutX="613" prefWidth="130" fx:id="finalRegistrationButton" visible="false" onAction="#sendRegMessageToServer">Register!</Button>
+        </VBox>
+        <ImageView layoutX="265" layoutY="400">
+            <image>
+                <Image url="icons/mainpanelicon.png"/>
+            </image>
+        </ImageView>
+        <Label layoutY="550" layoutX="540" fx:id="companyIntroduction">@EvilCorp.Inc. All rights reserved. 2018.</Label>
+    </AnchorPane>
+</VBox>

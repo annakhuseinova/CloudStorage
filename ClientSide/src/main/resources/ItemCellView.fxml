@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox fx:id="localStorageItemCell" xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            prefHeight="40" prefWidth="430.0" stylesheets="styles.css">
+    <HBox fx:id="filesDescriptionLocal">
+       <CheckBox fx:id="isLocalItemChecked" prefWidth="40"></CheckBox>
+        <Label fx:id="fileIcon"  maxHeight="20" prefWidth="60"></Label>
+        <Label fx:id="localItemName" prefWidth="240"></Label>
+        <Label fx:id="localItemSize" prefWidth="110"></Label>
+        <Label fx:id="localItemModified" prefWidth="150"></Label>
+    </HBox>
+</VBox>

@@ -1,0 +1,121 @@
+#SceneBackground {
+  -fx-background-image: url(cloudymountainsmini.jpg);
+  -fx-background-size: contain;
+  -fx-font-family: "stylishFont";
+
+}
+@font-face {
+   font-family: "stylishFont";
+   src: url("stylishFont.otf");
+}
+#label {
+  -fx-font-family: "stylishFont";
+  -fx-text-fill: gainsboro;
+  -fx-font-size: 30;
+}
+#description {
+   -fx-text-fill: gainsboro;
+   -fx-font-style: italic;
+   -fx-font-size: 17;
+}
+#companyIntroduction, #filesDescriptionLocal {
+   -fx-text-fill: gainsboro;
+}
+
+#registrationNotification {
+   -fx-font-size: 15;
+   -fx-text-fill: black;
+   -fx-font-weight: bold;
+   -fx-opacity: 0.7;
+}
+#entryButton {
+  -fx-font-size: 12;
+  -fx-font-family: "stylishFont";
+
+}
+#entryButton:visited {
+  -fx-border-color: red;
+}
+
+#loginField, #passwordField, #entryButton, #registrationButton, #registrationLoginForm, #registrationPassForm,#repeatPassForm, #finalRegistrationButton,
+#cancelRegistrationButton, #localStorageSend, #localStorageUpdate,#localStorageDelete, #cloudStorageDownload, #cloudStorageUpdate, #cloudStorageDelete
+{
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );
+    -fx-border-radius: 0.9;
+    -fx-font-size: 14;
+}
+#mainAnchorPane {
+  -fx-background-size: contain;
+}
+
+
+#secondBlockMainPanel,#firstBlockMainPanel {
+ -fx-background-color: lightgoldenrodyellow;
+ -fx-opacity: 0.9;
+}
+
+#infoPanel {
+ -fx-background-color: black;
+}
+#firstBlockMainPanel, #secondBlockMainPanel {
+  -fx-background-color: white;
+}
+
+
+#listOfLocalElements .list-cell:empty, #listOfCloudStorageElements .list-cell:empty {
+   -fx-opacity: 0;
+}
+
+
+#leftColumn, #infoPanel, #upperLocalStorPanel, #upperLocalStorPanel1 , #cloudStorageDownload,
+ #cloudStorageDelete, #cloudStorageUpdate,#localStorageUpdate,#localStorageDelete,#localStorageSend {
+ -fx-background-color:  linear-gradient(to right, rgba(44,44,44,1) 0%, rgba(0,0,0,1) 0%, rgba(17,17,17,1) 0%, rgba(76,76,76,1) 0%,
+ rgba(71,71,71,1) 0%, rgba(102,102,102,1) 0%, rgba(89,89,89,1) 0%, rgba(28,28,28,1) 0%, rgba(43,43,43,1) 76%, rgba(19,19,19,1) 100%);
+}
+
+#isLocalItemChecked > .box {
+   -fx-background-color: black;
+   -fx-border-radius: 50%;
+}
+#isLocalItemChecked:selected > .box > .mark {
+   -fx-background-color: white;
+}
+
+#localItemName, #localItemSize, #localItemLastModified {
+   -fx-font-size: 14;
+}
+#localStorageSend:hover, #localStorageDelete:hover, #localStorageUpdate:hover, #cloudStorageDownload:hover,#cloudStorageDelete:hover,
+  #cloudStorageUpdate:hover{
+ -fx-opacity: 0.6;
+}
+#menuIcon:hover {
+  -fx-opacity: 0.6;
+}
+#menu {
+   -fx-background-image: url(/icons/menuicon.png);
+   -fx-background-repeat: no-repeat;
+   -fx-background-color: transparent;
+   -fx-background-size: 30;
+}
+#menu .arrow {
+  -fx-background-color: transparent;
+}
+#menu:hover {
+  -fx-opacity: 0.6;
+}
+
+#goToPreviousFolderInLocalStorageButton, #goToPreviousFolderInCloudStorageButton {
+  -fx-background-image: url(icons/reply.png);
+  -fx-background-color: transparent;
+  -fx-background-repeat: no-repeat;
+}
+#goToPreviousFolderButton:hover, #goToPreviousFolderInCloudStorageButton:hover {
+  -fx-opacity: 0.6;
+}
+#listOfCloudStorageElements {
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+    -fx-box-border: transparent;
+}

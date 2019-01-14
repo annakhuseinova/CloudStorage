@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.text.Text?>
+<?import com.sun.deploy.uitoolkit.impl.fx.ui.FXDefaultPreloader.FXPreloaderPane?>
+<?import javafx.collections.FXCollections?>
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="MainPanelController"
+            prefHeight="620.0" prefWidth="1050.0" stylesheets="styles.css" fx:id="mainAnchorPane">
+    <HBox>
+        <VBox prefHeight="620" prefWidth="60" fx:id="leftColumn" alignment="BASELINE_CENTER">
+            <ImageView id="menuIcon">
+                <image>
+                    <Image url="icons/mainpanelicon.png"></Image>
+                </image>
+            </ImageView>
+        </VBox>
+        <VBox prefHeight="581" prefWidth="500" fx:id="firstBlockMainPanel">
+            <HBox  prefHeight="90" prefWidth="430"  style="-fx-background-color: black" alignment="CENTER_LEFT">
+                <Label prefWidth="10"></Label>
+                <Button prefWidth="180" fx:id="goToPreviousFolderInLocalStorageButton"  onAction="#goToPreviousDirectoryInLocalStorage" visible="false"></Button>
+                <Label text="Local Storage" textFill="white" style="-fx-font-size: 15;"></Label>
+            </HBox>
+            <HBox prefWidth="430" prefHeight="95" fx:id="upperLocalStorPanel" >
+                <Label prefWidth="40"></Label>
+                <Label text="File name" style="-fx-text-fill: white; -fx-font-size: 15;" alignment="BASELINE_LEFT" prefWidth="250" prefHeight="45"></Label>
+                <Label text="Size" style="-fx-text-fill: white; -fx-font-size: 15;" prefWidth="90"  prefHeight="45"></Label>
+                <Label text="Last modified" style="-fx-text-fill: white; -fx-font-size: 15;" prefHeight="55"></Label>
+            </HBox>
+            <ListView fx:id="listOfLocalElements" prefHeight="570"  onMouseClicked="#goToNextDirectoryInLocalStorageOnDoubleClickOrOpenFile"></ListView>
+            <HBox spacing="8" prefHeight="95" alignment="CENTER" style="-fx-background-color: black;">
+                <Button prefHeight="30" prefWidth="150" fx:id="localStorageUpdate" style="-fx-text-fill: white;" onAction="#selectAllFilesFromLocalStorage">Select all</Button>
+                <Button prefHeight="30" prefWidth="150" fx:id="localStorageDelete" style="-fx-text-fill: white;" onAction="#initializeListOfLocalStorageItems">Update</Button>
+                <Button prefHeight="30" prefWidth="150" fx:id="localStorageSend"  style="-fx-text-fill: white;" onAction="#transferFilesToCloudStorage">Send to storage</Button>
+            </HBox>
+        </VBox>
+        <VBox prefHeight="600" prefWidth="500" fx:id="secondBlockMainPanel">
+            <HBox prefWidth="430" prefHeight="90" style="-fx-background-color: black" alignment="CENTER">
+                <Label prefWidth="20"></Label>
+                <Button prefWidth="180" fx:id="goToPreviousFolderInCloudStorageButton" onAction="#goToPreviousDirectoryInCloudStorage" visible="false"></Button>
+                <Label text="Cloud Storage" textFill="white" alignment="CENTER" style="-fx-font-size: 15;" prefWidth="540" ></Label>
+                <HBox alignment="BASELINE_RIGHT">
+                    <ChoiceBox onAction="#goToOpeningPanelToChangeProfileOrLeaveApp" fx:id="menu" value="Item1" prefHeight="35">
+                        <items>
+                            <FXCollections fx:factory="observableArrayList">
+                                <String fx:value="Change profile"/>
+                                <String fx:value="Exit"/>
+                            </FXCollections>
+                        </items>
+                    </ChoiceBox>
+                </HBox>
+            </HBox>
+            <HBox prefWidth="430" prefHeight="92.5" fx:id="upperLocalStorPanel1">
+                <Label prefWidth="40"></Label>
+                <Label text="File name" style="-fx-text-fill: white; -fx-font-size: 15;" alignment="BASELINE_LEFT" prefWidth="250" prefHeight="47"></Label>
+                <Label text="Size" style="-fx-text-fill: white; -fx-font-size: 15;" prefWidth="90"  prefHeight="47"></Label>
+                <Label text="Last modified" style="-fx-text-fill: white; -fx-font-size: 15;" prefHeight="47"></Label>
+            </HBox>
+            <ListView prefHeight="569.5" prefWidth="430" fx:id="listOfCloudStorageElements" style="-fx-background-color:white;" onMouseClicked="#goToNextDirectoryInCloudStorageOnDoubleClick">
+            </ListView>
+            <HBox spacing="8" prefHeight="94" alignment="CENTER" style="-fx-background-color: black;">
+            <Button prefHeight="30" prefWidth="150" fx:id="cloudStorageDownload" style="-fx-text-fill: white;" onAction="#downloadFilesIntoLocalStorage">Download</Button>
+            <Button prefHeight="30" prefWidth="150" fx:id="cloudStorageDelete" style="-fx-text-fill: white;" onAction="#selectAllFilesFromCloudStorage">Select All</Button>
+            <Button prefHeight="30" prefWidth="150" fx:id="cloudStorageUpdate" style="-fx-text-fill: white;" onAction="#updateCloudStoragePanel">Update</Button>
+        </HBox>
+        </VBox>
+    </HBox>
+</AnchorPane>
